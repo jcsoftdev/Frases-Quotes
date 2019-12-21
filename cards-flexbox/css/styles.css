@@ -1,6 +1,6 @@
 body{
     box-sizing: border-box;
-    background-color: #f2f2f2;
+    background-color: 	#00ff8d;
     /* overflow-y: hidden; */
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -12,11 +12,16 @@ h2{
     flex: 0 1 100%;
     text-align: center;
     font-size: 1.8rem;
+    font-family: 'Fredoka One','Satisfy';
 }
 h3{
+    font-size: 18px !important;
     font-family: 'Heebo', sans-serif, serif;
     margin: 0;
-    font-weight: 700;
+    font-weight: 600 !important;
+    text-align: justify;
+    padding: 0 1rem;
+    font-family: "Courgette";
 }
 img{
     width: 100%;
@@ -46,16 +51,20 @@ img{
     z-index:999;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.541);
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.541);
     margin-bottom: 1rem;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    background-color: #fff;
 }
 .contenido{
     background-color: #fff;
     text-align: center;
     padding: 1rem;
-    text-transform: uppercase;
+    
 }
 .contenido span{
+    text-transform: uppercase;
     color: #db008d;
 }
 .contenido h3{
@@ -64,11 +73,33 @@ img{
     line-height: 1.4rem;
     
 }
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    
+}
+.btn .boton{
+    border: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    outline:none;
+}
+.btn .boton:hover{
+    border-radius: 1rem;
+    background-color: #339933;
+}
 .boton{
     display: inline-block;
-    background-color: #009fd1;
+    background-color: #339933;
     color: rgb(255, 255, 255);
     padding: .8rem 3rem;
     margin-top: 1rem;
     text-decoration: none;
+    border-radius: .5rem;
+}
+.boton:hover{
+    opacity: .7;
 }

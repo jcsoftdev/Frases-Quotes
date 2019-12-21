@@ -1,173 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Autorization : 563492ad6f9170000100000139f37a50691a43539bd0ab85156befc5 -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Cards Flexbox</title>
+    <title>Frases</title>
     <link
       rel="stylesheet"
       href="https://necolas.github.io/normalize.css/8.0.0/normalize.css"
     />
-    <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Courgette|Satisfy|Fredoka+One|Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
-    <script>
-      
- 
-
-    </script>
   </head>
   <body>
     <div class="contenedor">
       <main class="contenido-principal" id="content">
-        <h2>Últimas Entradas</h2>
-        <article class="entrada">
-          <img src="" alt="texto entrada" />
-          <div class="contenido">
-            <h3>Tips para viajar con poco presupuesto</h3>
-            <p>Publicado el: <span>19 Julio, 2018</span></p>
-            <p>Por: <span>Blog Viajes</span></p>
-            <a href="#" class="boton"> Leer más</a>
-          </div>
-        </article>
-        <article class="entrada">
-          <img src="" alt="texto entrada" />
-          <div class="contenido">
-            <h3>Todo lo necesario para tu viaje</h3>
-            <p>Publicado el: <span>19 Julio, 2018</span></p>
-            <p>Por: <span>Blog Viajes</span></p>
-            <a href="#" class="boton"> Leer más</a>
-          </div>
-        </article>
-        <article class="entrada">
-          <img src="" alt="texto entrada" />
-          <div class="contenido">
-            <h3>El equipo necesario para tomar las mejores fotografías</h3>
-            <p>Publicado el: <span>19 Julio, 2018</span></p>
-            <p>Por: <span>Blog Viajes</span></p>
-            <a href="#" class="boton"> Leer más</a>
-          </div>
-        </article>
-        <article class="entrada">
-          <img src="" alt="texto entrada" />
-          <div class="contenido">
-            <h3>Checklist para tu próximo viaje</h3>
-            <p>Publicado el: <span>19 Julio, 2018</span></p>
-            <p>Por: <span>Blog Viajes</span></p>
-            <a href="#" class="boton"> Leer más</a>
-          </div>
-        </article>
-        <article class="entrada">
-          <img src="" alt="texto entrada" />
-          <div class="contenido">
-            <h3>Los mejores lugares para visitar este otoño</h3>
-            <p>Publicado el: <span>19 Julio, 2018</span></p>
-            <p>Por: <span>Blog Viajes</span></p>
-            <a href="#" class="boton"> Leer más</a>
-          </div>
-        </article>
-        <article class="entrada">
-          <img src="" alt="texto entrada" />
-          <div class="contenido">
-            <h3>Los mejores lugares para visitar con montañas</h3>
-            <p>Publicado el: <span>19 Julio, 2018</span></p>
-            <p>Por: <span>Blog Viajes</span></p>
-            <a href="#" class="boton"> Leer más</a>
-          </div>
-        </article>
+        <h2>Entrada de Frases</h2>
       </main>
+      <div class="btn">
+
+        <button id="btn" class="boton">Ver Mas</button>
+      </div>
     </div>
     <!--.contenido-->
     <!-- javascript -->
-    <script>
-
-      const colors = [
-        "#EA2336" , "#FFAC0E" , "#C4AF00", "#C63968" , "#FF6870" ,  "#FFBE86⁣","Red", "Black", "Purple", "Grey", "Yellow", "Blue"
-      ]
-      function getColor(arrayColor){
-        const color = (Math.floor(Math.random() * (arrayColor.length - 1)) + 1)
-        return arrayColor[color]
-      }
-      console.log(getColor(colors));
-      async function getQuote(){
-        const numero = (Math.floor(Math.random() * (1643 - 1)) + 1);
-        let dataQuote = await fetch("https://type.fit/api/quotes/")
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            return data[numero];
-          });
-        // console.log(dataQuote);
-        return dataQuote;
-      }
-      
-      async function getContent(srcUrl){
-        const quote = await getQuote();
-        const template =  `
-          <img src="${srcUrl}" alt="texto entrada" />
-          <div class="contenido">
-            <h3>${ quote.text}</h3>
-            <p>Dev by: <span>Juan Carlos </span></p>
-            <p>Author: <span>${quote.author}</span></p>
-            <a href="#" class="boton" style="background-color:${getColor(colors)}"> Leer más</a>
-          </div>
-        `;
-        return template
-      }
-
-      function getUrlImage() {
-        return "https://source.unsplash.com/collection/" + (Math.floor(Math.random() * (1000 - 1)) + 1);
-      }
-
-
-      async function render(params) {
-        let article = document.createElement("article");
-        article.setAttribute("class","entrada");
-        const content = document.getElementById('content');
-        const html = await getContent(getUrlImage())
-        article.innerHTML= (html)
-        content.appendChild(article)
-      }
-      for (let i = 0; i < 10; i++) {
-        // const element = array[i];
-        
-        render()
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // console.log(getContent());
-      function addUrl(){
-        let img = document.getElementsByTagName('img');
-        // console.log(img);
-        for (let i = 0; i < img.length; i++) {
-          // console.log(Math.random());
-          let url = "https://source.unsplash.com/collection/"+(Math.floor(Math.random() * (1000 - 1)) + 1);
-          // console.log(url);
-          // console.log(img[i]);
-          img[i].src=url;
-          
-        }
-      }
-      addUrl();
-    </script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
