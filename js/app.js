@@ -19,7 +19,10 @@
         "#8C5678",
         "#DBB1C7",
         "#F20034",
-        "#000"
+        "#429E6B",
+        "#47525E",
+        "#FFA8A8",
+        "#FFD400"
       ];
       function getColor(arrayColor) {
         const color = Math.floor(Math.random() * (arrayColor.length - 1)) + 1;
