@@ -54,15 +54,11 @@
           "https://source.unsplash.com/collection/" +
             (Math.floor(Math.random() * (1000 - 1)) + 1)
         ).then(async (res)=>{
-          console.log(res.url);
-          
           if (
             res.url == "https://images.unsplash.com/source-404?fit=crop&fm=jpg&h=800&q=60&w=1200"
           ) {
-            console.log('entre al if');
             return await getUrlImage()
           }else{
-            console.log('entre al else');
             return res.url
           }
         });
