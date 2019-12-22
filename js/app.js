@@ -1,24 +1,25 @@
 'use strict';
 
       const colors = [
-        "#EA2336",
-        "#FFAC0E",
-        "#C4AF00",
-        "#C63968",
-        "#FF6870",
+        "#0E1B23",
+        "#186768",
+        "#6FC6AE",
+        "#062B28",
+        // "#408C2A",
+        "#21375B",
+        "#694475",
+        "#E25861",
+        "#51963D",
         "#FFBE86⁣",
-        "Red",
-        "Black",
-        "Purple",
-        "Grey",
-        "Yellow",
-        "Blue"
+        "#272638",
+        "#47895F",
+        "#681D1D",
+        "#000"
       ];
       function getColor(arrayColor) {
         const color = Math.floor(Math.random() * (arrayColor.length - 1)) + 1;
         return arrayColor[color];
       }
-      console.log(getColor(colors));
       async function getQuote() {
         const numero = Math.floor(Math.random() * (1643 - 1)) + 1;
         let dataQuote = await fetch("https://type.fit/api/quotes/")
@@ -52,14 +53,15 @@
 
         let url = fetch(
           "https://source.unsplash.com/collection/" +
-            (Math.floor(Math.random() * (1000 - 1)) + 1)
-        ).then(async (res)=>{
+            (Math.floor(Math.random() * (2000 - 1)) + 1)
+        ).then(async res => {
           if (
-            res.url == "https://images.unsplash.com/source-404?fit=crop&fm=jpg&h=800&q=60&w=1200"
+            res.url ==
+            "https://images.unsplash.com/source-404?fit=crop&fm=jpg&h=800&q=60&w=1200"
           ) {
-            return await getUrlImage()
-          }else{
-            return res.url
+            return await getUrlImage();
+          } else {
+            return res.url;
           }
         });
         return url
