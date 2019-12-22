@@ -49,17 +49,32 @@
       }
 
       function getUrlImage() {
-        return (
-          "https://source.unsplash.com/collection/" +
-          (Math.floor(Math.random() * (1000 - 1)) + 1)
-        );
-      }
 
+        let url = fetch(
+          "https://source.unsplash.com/collection/" +
+            (Math.floor(Math.random() * (1000 - 1)) + 1)
+        ).then(async (res)=>{
+          console.log(res.url);
+          
+          if (
+            res.url == "https://images.unsplash.com/source-404?fit=crop&fm=jpg&h=800&q=60&w=1200"
+          ) {
+            console.log('entre al if');
+            return await getUrlImage()
+          }else{
+            console.log('entre al else');
+            return res.url
+          }
+        });
+        return url
+      }
+      // let img = getUrlImage();
+      // console.log(img);
       async function render(params) {
         let article = document.createElement("article");
         article.setAttribute("class", "entrada");
         const content = document.getElementById("content");
-        const html = await getContent(getUrlImage());
+        const html = await getContent(await getUrlImage());
         article.innerHTML = html;
         content.appendChild(article);
       }
